@@ -3,9 +3,9 @@ import { gql } from 'apollo-server-express';
 
 const typeDefs = gql`
   type Author {
-    id: ID!
-    age: Int!
-    name: String!
+    id: ID
+    age: Int
+    name: String
     books: [String]
   }
 
@@ -16,6 +16,8 @@ const typeDefs = gql`
 
   type Mutation {
     addAuthor(name: String!, age: Int!, books: [String]): Author
+    deleteAuthor(id: String!): Author
+    updateAuthor(id: String!, name: String!): Author
   }
 `;
 
